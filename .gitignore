@@ -3,3 +3,4 @@ db/
 
 #ignore module directory
 /mongoData/rest-api-playlist/node_modules/
+rest-api-playlist/node_modules/
