@@ -2,5 +2,5 @@
 db/
 
 #ignore module directory
-/mongoData/rest-api-playlist/node_modules/
+# Absolute path did not work -->>> /mongoData/rest-api-playlist/node_modules/
 rest-api-playlist/node_modules/
