@@ -1,2 +1,5 @@
 #ignore db directory
 db/
+
+#ignore module directory
+/mongoData/rest-api-playlist/node_modules/
