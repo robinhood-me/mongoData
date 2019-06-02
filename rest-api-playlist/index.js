@@ -1,18 +1,13 @@
 const express = require('express');
+// const router = express.Router();
 
-// setup express app
+//setup express app
 const app = express();
 
-// '/' makes the root the only route that will respond
-// app.get('/', function(req, res){
-app.get('/api', function(req, res){
+//initialize routes
+app.use('/api', require('./routes/api'));
 
-    console.log('GET request');
-    // res.end();
-    res.send({ name: 'Robin Hood'});
-});
-
-// listen for requests
+//listen for requests
 app.listen(process.env.port || 4000, function(){
-    console.log('now listening for requests');
+    console.log('now listening for requests from routes file');
 });
