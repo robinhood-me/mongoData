@@ -3,10 +3,13 @@ const express = require('express');
 // setup express app
 const app = express();
 
-# '/' makes the root the only route that will respond
-app.get('/', function(req, res){
+// '/' makes the root the only route that will respond
+// app.get('/', function(req, res){
+app.get('/api', function(req, res){
+
     console.log('GET request');
-    res.end();
+    // res.end();
+    res.send({ name: 'Robin Hood'});
 });
 
 // listen for requests
