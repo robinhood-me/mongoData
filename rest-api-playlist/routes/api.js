@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 // allows the rest of the functions in the file
 // to be exposed to the NodeJS app
-exports = module.exports = router;
-
+// see below for exporting of router routes
 
 // get a list of ninjas from the db
 router.get('/ninjas', function(req, res){
@@ -25,3 +24,7 @@ router.put('/ninjas/:id', function(req, res){
 router.delete('/ninjas/:id', function(req, res){
     res.send({type: 'DELETE'});
 });
+//exports = module.exports = router;
+module.exports = router;
+
+// 
