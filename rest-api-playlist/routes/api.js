@@ -7,6 +7,7 @@ exports = module.exports = router;
 
 // get a list of ninjas from the db
 router.get('/ninjas', function(req, res){
+    console.log('GET request you sweet piece of ass');
     res.send({type: 'GET'});
 });
 
