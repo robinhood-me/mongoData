@@ -3,11 +3,16 @@
 
 const express = require('express');
 // const router = express.Router();
+const bodyParser = require('body-parser');
 // import routes from api.js into here
 const routes = require('./routes/api');
 
 //setup express app
 const app = express();
+
+// add middleware body-bodyParser
+// bodyParser can handle diff formats so specify .json
+app.use(bodyParser.json());
 
 // app.use(routes);
 
@@ -16,7 +21,6 @@ const app = express();
 // Here we require the file and *use* it inside /api.
 // USE is the middleware - code that runs between request and response
 // code -> app.use('/api', require('./routes/api'))
-
 // if we still want to use /api, we add it as 1st param
 app.use('/api', routes);
 
