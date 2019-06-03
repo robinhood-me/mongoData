@@ -11,12 +11,12 @@ const NinjaSchema = new Schema({
         type: String,
         required: false
     },
-    availability: {
-        type: boolean,
+    available: {
+        type: Boolean,
         required: false
     },
     age: {
-        type: number,
+        type: Number,
         required: false
     }
     // add in geolocation

@@ -18,7 +18,7 @@ const app = express();
 //Name of DB, ninjago, doesn't have to exist, it will create it.
 mongoose.connect('mongodb://localhost/ninjago');
 //override mongoose.Promise since deprecated
-mongoose.Promise = global.Promise
+//mongoose.Promise = global.Promise
 
 // add middleware body-bodyParser
 // bodyParser can handle diff formats so specify .json

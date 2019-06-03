@@ -18,8 +18,8 @@ router.post('/ninjas', function(req, res){
 //    var ninja = new Ninja(req.body);
 //    ninja.save();
 //last two statements could be merged:
-Ninja.create(req.body).then(function(ninja){
-    req.send(ninja);
+ninja.create(req.body).then(function(ninja){
+    res.send(ninja);
 });
 // ^this will send back a promise that at some
 // point (asynchronously) we will get back the data.
