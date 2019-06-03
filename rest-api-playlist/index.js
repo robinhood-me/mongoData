@@ -4,11 +4,21 @@
 const express = require('express');
 // const router = express.Router();
 const bodyParser = require('body-parser');
+
+const mongoose = require('mongoose');
+
+
+// const ninja = require('ninja');
 // import routes from api.js into here
 const routes = require('./routes/api');
 
 //setup express app
 const app = express();
+
+//Name of DB, ninjago, doesn't have to exist, it will create it.
+mongoose.connect('mongodb://localhost/ninjago');
+//override mongoose.Promise since deprecated
+mongoose.Promise = global.Promise
 
 // add middleware body-bodyParser
 // bodyParser can handle diff formats so specify .json
@@ -23,6 +33,8 @@ app.use(bodyParser.json());
 // code -> app.use('/api', require('./routes/api'))
 // if we still want to use /api, we add it as 1st param
 app.use('/api', routes);
+
+// app.use(ninja);
 
 //listen for requests
 app.listen(process.env.port || 4000, function(){

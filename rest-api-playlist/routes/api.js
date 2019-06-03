@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+// IMPORT associated with export in ninja.js
+const ninja = require('../models/ninja');
+
 // allows the rest of the functions in the file
 // to be exposed to the NodeJS app
 // see below for exporting of router routes
@@ -12,12 +15,21 @@ router.get('/ninjas', function(req, res){
 
 // add a new ninja to the db
 router.post('/ninjas', function(req, res){
-    console.log(req.body);
-    res.send({
-        type: 'POST',
-        name: req.body.name,
-        rank: req.body.rank
-    });
+//    var ninja = new Ninja(req.body);
+//    ninja.save();
+//last two statements could be merged:
+Ninja.create(req.body).then(function(ninja){
+    req.send(ninja);
+});
+// ^this will send back a promise that at some
+// point (asynchronously) we will get back the data.
+// We handle this with the .then method.
+// NOW WE TAKE OUT ALL THISv out.
+//    res.send({
+//        type: 'POST',
+//        name: req.body.name,
+//        rank: req.body.rank
+//    });
 });
 
 // update a ninja in the db
