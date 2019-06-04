@@ -34,12 +34,22 @@ router.post('/ninjas', function(req, res, next){
 
 // update a ninja in the db
 router.put('/ninjas/:id', function(req, res, next){
-    res.send({type: 'PUT'});
+    //console.log(req.params.id);
+    Ninja.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
+        Ninja.findOne({_id: req.params.id}).then(function(ninja){
+            res.send(ninja);
+        })
+    });
 });
 
 // delete a ninja in the db
 router.delete('/ninjas/:id', function(req, res, next){
+    console.log(req.params.id);
+    Ninja.findByIdAndRemove({_id: req.params.id}).then(function(ninja){
+        res.send(ninja);
+    }).catch(next);
     res.send({type: 'DELETE'});
+    //res.send(params.id)
 });
 //exports = module.exports = router;
 module.exports = router;

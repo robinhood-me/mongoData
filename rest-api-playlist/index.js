@@ -16,7 +16,7 @@ const routes = require('./routes/api');
 const app = express();
 
 //Name of DB, ninjago, doesn't have to exist, it will create it.
-mongoose.connect('mongodb://localhost/ninjago');
+mongoose.connect('mongodb://localhost:27017/ninjago');
 //override mongoose.Promise since deprecated
 mongoose.Promise = global.Promise;
 
