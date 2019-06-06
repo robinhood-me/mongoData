@@ -20,6 +20,9 @@ mongoose.connect('mongodb://localhost:27017/ninjago');
 //override mongoose.Promise since deprecated
 mongoose.Promise = global.Promise;
 
+//1st stage middleware to serve static content
+app.use(express.static('public'));
+
 // add middleware body-bodyParser
 // bodyParser can handle diff formats so specify .json
 app.use(bodyParser.json());
