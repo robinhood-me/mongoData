@@ -1,0 +1,12 @@
+echo 'deb http://deb.debian.org/debian jessie main
+deb-src http://deb.debian.org/debian jessie main
+
+deb http://deb.debian.org/debian-security/ jessie/updates main
+deb-src http://deb.debian.org/debian-security/ jessie/updates main
+
+deb http://deb.debian.org/debian jessie-updates main
+deb-src http://deb.debian.org/debian jessie-updates main' > /etc/apt/sources.list
+
+So the claim I filed just this week doesn't stay open until I find work? It will close each week? And I have to file a new claim each week? And I have to fill out the entire claim form including work history etcetera as if I'm starting from beginning? I just want to make sure I understand this.
+
+5HFKKJ-002

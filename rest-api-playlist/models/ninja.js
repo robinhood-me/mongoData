@@ -31,6 +31,14 @@ const NinjaSchema = new Schema({
         type: Number,
         required: false
     },
+    property1: {
+        type: String,
+        required: false
+    },
+    property2: {
+        type: String,
+        required: false
+    },
     // add in geolocation
     geometry: GeoSchema
 });
